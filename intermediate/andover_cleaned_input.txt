@@ -1,0 +1,1302 @@
+<!DOCTYPE >
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 9]><!--> <!--<![endif]-->
+<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+More info: h5bp.com/b/378 -->
+/* &lt;![CDATA[ */_cf_loadingtexthtml="&lt;img alt=' ' src='/cf_scripts/scripts/ajax/resources/cf/images/loading.gif'/&gt;";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/cf_scripts/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=8579;
+_cf_flash_policy_port=1243;
+_cf_clientid='94F122E3278C94134191D1E2E97D1DAC';/* ]]&gt; */
+Andover Elementary School - School Profile - District Intelligence
+<!-- Facebook Metadata /-->
+<!-- Google+ Metadata /-->
+<!-- Grab Google CDN's jQuery, fall back to local if offline -->
+<!-- 2.0 for modern browsers, 1.10 for .oldie -->
+<!-- include any custom javascripts for this page -->
+<!--[if IE]><link rel="stylesheet" type="text/css" href="/css/ie-mods.css" media="screen,projection" /><![endif]-->
+<!--[if gte IE 9]><link rel="stylesheet" type="text/css" href="/css/ie9-mods.css" media="screen,projection" /><![endif]-->
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/css/ie8-mods.css" media="screen,projection" /><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/css/ie7-mods.css" media="screen,projection" /><![endif]-->
+<!--[if lte IE 7]><script type="text/javascript" src="/scripts/ieform.js"></script><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/css/ie6-mods.css" media="screen,projection" /><![endif]-->
+<!--[if lte IE 6]><script type="text/javascript" src="/scripts/iehover.js"></script><![endif]-->
+<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+However, there is a blank style.css in the css directory should you prefer -->
+<!-- include any custom css files for this page -->
+<!-- <link rel="stylesheet" href="/gumby/css/style.css"> -->
+#mainNav .navbar .section-title{
+margin-top: -10px;
+}
+&lt;!-- TODO: Move this to a permanent spot --&gt;
+// Function below handles the onclick display for the nav menus
+$(function () {
+$('.drop_down_di').click( function(e){
+//If a drop down menu is visible and it isn't the one we are currently clicking on, then we want to hide it.
+if ($('.drop_down_di').not(this).find('ul:visible')) {
+$('.drop_down_di').not(this).find('ul:visible').slideUp();
+e.stopPropagation();
+}
+//If we are clicking on a multi select dropdown menu clicker header then we want to toggle the display, otherwise we want to leave the menu open.
+if(($(this).hasClass('multi') &amp;&amp; $(this).find('ul').not(':visible').length == 1) || $(e.target).hasClass('multitoggle') || $(e.target).parent().hasClass('multitoggle')){
+$(this).find('ul').slideToggle(200);
+e.stopPropagation();
+}
+//We want to toggle any other dropdown menu that doesn't allow multiple menu item selections
+if(!$(this).hasClass('multi') ){
+$(this).find('ul').slideToggle(200);
+e.stopPropagation();
+}
+});
+$('.user').click( function(e){
+$(this).find('.drop_down_di ul').slideToggle(200);
+e.stopPropagation();
+});
+$(document).click(function (e) {
+if ($(e.target).parents('.drop_down_di.multi').length != 0) {
+// do nothing
+}
+else
+{
+if ($('.drop_down_di ul').is(':visible')) {
+$('.drop_down_di ul', this).slideUp();
+}
+}
+});
+var isMobile = false; //initiate as false
+// device detection
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+|| /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) isMobile = true;
+//JH: This function below will handle the closing of the drop down menus when you hover off with the mouse (instead of clicking)
+$('.anim250').mouseleave( function(e){
+// console.log(e);
+// console.log('we have mouseouted the menu area');
+// console.log($('.drop_down_di ul').is(':visible'));
+if(!isMobile){
+if ($('.drop_down_di ul').is(':visible')) {
+$('.drop_down_di ul').slideUp();
+e.stopPropagation();
+}
+}
+});
+});
+<a class="toggle" gumby-trigger="#nav1 &gt; ul" href="#"></a>
+var isPreview = '0';
+var peCategory = '1';
+$(document).ready(function(){
+/*Show spinner for the PDF generation*/
+$('.printPage').click(function(event){
+window.location='/index.cfm?event=public.PublicProfileDetailPrint&amp;schoolGUID=984B9338-3DFC-488E-8888-BDF1A813F85A&amp;isPrintVersion=1&amp;wsID=665&amp;districtGUID=766B15FE-E125-43EB-8E78-727E3CCF9A07&amp;wp=en';
+});
+$('.changeLanguage').click(function(event){
+if(isPreview == 0){
+if(peCategory==1){
+window.location='/index.cfm?event=public.profile&amp;schid=25347&amp;school=Andover%20Elementary%20School&amp;wsID=665&amp;wp='+$(this).attr('language');
+} else if (peCategory==2) {
+window.location='/index.cfm?event=public.profile&amp;did=232&amp;atid=1&amp;assoc=&amp;wsID=665&amp;wp='+$(this).attr('language');
+}
+} else {
+if(peCategory==1){
+window.location='/index.cfm?event=public.profilepreview&amp;schid=25347&amp;school=Andover%20Elementary%20School&amp;wsID=665&amp;wp='+$(this).attr('language');
+} else if (peCategory==2) {
+window.location='/index.cfm?event=public.profilepreview&amp;did=232&amp;atid=1&amp;assoc=&amp;wsID=665&amp;wp='+$(this).attr('language');
+}
+}
+});
+//test to see if we can use a browser's default language setting to determine what to display. as of 2023-11-07 this is unrealiable
+// var language = navigator.languages &amp;&amp; navigator.languages[0] || // Chrome / Firefox
+// navigator.language || // All browsers
+// navigator.userLanguage; // IE &lt;= 10
+//console.log(language);
+});
+<a class="hideText" href="javascript:void(0)">Hide Text</a>
+<a class="showText" href="javascript:void(0)">Reveal Text</a>
+<a class="printPage" href="javascript:void(0)"></a>
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+.btmNavHolder {width:100%; height:auto; position:fixed; bottom:0; z-index:999;}
+.btmNavActivator {position:relative; cursor:pointer; z-index:99999; margin-left:90%; top:5px;}
+.btmNavActivator img {-webkit-border-radius: 5px 5px 0px 0px; border-radius: 5px 5px 0px 0px; width:20px; height:auto;}
+.btmNavDivider {position:relative; height:4px; width:100%; background-color:#0A81C5;}
+.btmNav {width:100%; height:50px; background-color:#0A81C5; color:white; font-size:12px; line-height:50px; vertical-align:middle; display:none; overflow:hidden;}
+.btmNavList {width:100%; list-style:none;}
+.btmNavLinks {width:33%; text-align:center; float:left;}
+.btmNavLinks:nth-child(2) {border-left:1px solid #0B6289; border-right:1px solid #0B6289;}
+a.btmNavLinks {text-decoration:none; color:white;}
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+.btmNavHolder {width:100%; height:auto; position:fixed; bottom:0; z-index:999;}
+.btmNavActivator {position:relative; cursor:pointer; z-index:99999; margin-left:90%; top:5px;}
+.btmNavActivator img {-webkit-border-radius: 5px 5px 0px 0px; border-radius: 5px 5px 0px 0px;}
+.btmNavDivider {position:relative; height:4px; width:100%; background-color:#0A81C5;}
+.btmNav {width:100%; height:100px; background-color:#0A81C5; color:white; font-size:28px; line-height:100px; vertical-align:middle; display:none; overflow:hidden;}
+.btmNavList {width:100%; list-style:none;}
+.btmNavLinks {width:33%; text-align:center; float:left;}
+.btmNavLinks:nth-child(2) {border-left:1px solid #0B6289; border-right:1px solid #0B6289;}
+a.btmNavLinks {text-decoration:none; color:white;}
+}
+@media print {
+body {font: normal 16px Cabin, 'Cabin', Arial, Helvetica, sans-serif;}
+}
+@media only screen and (min-width: 1263px) {
+#schoolprofile-container {position:relative; display:block; width: 1263px; margin: 0 0;}
+.dashboard .centred-items {position:relative; margin:0 auto; width: 1280px;}
+.dashboard .dropdown-link a.expanded{margin-top:8px;}
+body {background: white;}
+}
+.graph table {padding-left:7px !important;padding-right:7px !important; min-width:40px;^width:40px;}
+<!--[if IE 8]><script src="scripts/html5shiv-printshiv.js"></script> <![endif]-->
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if IE 8]><link href="/css/printfix.css" media="print" rel="stylesheet" type="text/css"/><![endif]-->
+<!--[if !IE]><link href="/css/ie8-up.css" rel="stylesheet" type="text/css"/><![endif]-->
+<a class="whitelink schURL" href="https://aes.nbed.ca/" target="_blank">Andover Elementary School</a>
+<a class="whitelink schMap" href="http://maps.google.com/maps?q=46.74858744993905,-67.69929433677062" target="_blank">9 School St., Perth-Andover, NB E7H 4T4</a>
+Principal: Somer Drost
+Vice-Principal: Tammy Wright
+Administrative Assistant: Kimberley McLaughlin
+Phone: (506) 273-4761
+<!-- Cached Content -->
+About This School
+<a class="collapse">Collapse description</a>
+Grade Structure and Family of Schools
+Grade Structure: K-5
+Family of School(s): Perth-Andover Middle School (All Programs)
+Education Centre: Woodstock
+The grade range of the school, family of schools and Education Centre that it belongs to.
+<a class="collapse">Collapse description</a>
+External Links
+<a href="https://asdwbp.nbed.nb.ca/Eligibility" target="blank">School Finder</a>
+<a href="https://asdwbp.nbed.nb.ca/TransportationEligibility" target="blank">Bus Eligibility</a>
+<a href="https://boundaries.districtintelligence.com/event/page.webGisPublic/DistrictCode/NB999" target="blank">School Catchments</a>
+Click on a link above to learn more about Anglophone West School District schools and access available services (pages are hosted outside of District Intelligence).
+<a class="collapse">Collapse description</a>
+Staff Summary
+Total FTE: 36.6
+Education Staff FTE: 21.0
+Support Staff FTE: 16.6
+Total Estimated Salary Cost: $2,462,547
+FTE (Full Time Equivalent) and estimated salary cost of total staff at this school. Displaying breakdown of FTE into education (teachers) and support staff categories (support includes administrative, classroom support, custodian... etc.). Data as of April 2024.
+<!-- Cached Content -->
+Enrolment Profile
+<a class="collapse">Collapse description</a>
+var jsonConfig67286 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67286,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67286',theme : 'classic'});
+});
+var jsonConfig67287 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67287,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67287',theme : 'classic'});
+});
+var jsonConfig67288 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67288,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67288',theme : 'classic'});
+});
+Total Enrolment 2023-24
+264
+Number of pupils attending the school. The graph represents up to 6 years of total enrolment history at the school.
+<a class="collapse">Collapse description</a>
+Utilization
+44%
+Proportion of the school's capacity currently in use based on functional capacity figures. This does not include modular classroom capacity (where applicable). Data updated: January 2024
+<a class="collapse">Collapse description</a>
+Projected Utilization in 5 years
+(Projected Enrolment)
+45% (267)
+Proportion of the school's capacity projected to be in use 5 years from now.
+<a class="collapse">Collapse description</a>
+Surplus Student Spaces
++336
+The extent to which the school's 2023-24 enrolment compares to it's functional capacity of available student spaces (excluding modulars). A negative value indicates a shortfall of permanent student spaces compared to total enrolment. A positive value indicates a surplus of student spaces available compared to the total enrolment. Data verified: Jan. 2024
+<a class="collapse">Collapse description</a>
+Cross Boundary English Prime Program Inflow
+(% of Enrolment)
+22 (10%)
+Number of pupils in English Prime program who attend this school, but live in another school's boundary.
+<a class="collapse">Collapse description</a>
+Cross Boundary English Prime Program Outflow
+(% of Residents)
+10 (4.7%)
+Number of pupils in English Prime program who live in this school's boundary, but choose to attend another school.
+<a class="collapse">Collapse description</a>
+Net Cross Boundary English Prime Program
++12
+A calculated result of the relationship between Inflow vs. Outflow of English Prime enrolments.
+<a class="collapse">Collapse description</a>
+Residents Enrolled in French Immersion Programs
+(District Average)
+14.1% (29.3%)
+The percentage of pupils residing within this school's boundary that are enrolled in a French Immersion program at any school within the jurisdiction.
+<a class="collapse">Collapse description</a>
+Home Language Not English
+(District Average)
+2.3% (9.2%)
+The proportion of the school's enrolment indicating that their primary language spoken at home is not English.
+<!-- Cached Content -->
+Facility Profile
+<a class="collapse">Collapse description</a>
+School Building Details
+Date of Construction: 1956
+Building Area: 4,901.2 Sq. M.
+Note: Date of construction refers to the original structure and does not include additions/upgrades that may have occurred since that time. Data Verified as of Sept. 2024.
+<a class="collapse">Collapse description</a>
+Room Details
+Number of Classrooms: 25
+Number of Modulars: 0
+Number of classrooms (excluding modulars) and number of modulars on-site. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+Per Sq. M. Utility Costs
+Average: $38
+$43
+Total fiscal year operating costs for each school site divided by the size of the building footprint. Includes power, sewage, garbage, heating, maintenance... etc. Value is dollars per square metre. Source: Facilities Data (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Per Pupil Operating Costs
+District Avg.: $599
+$802
+Total 2023-24 fiscal year operating costs divided by the total enrolment of the school as of Sept. 30th 2023. Source: Facilities Data (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Capacity Information
+Incl. Modulars: 44.0%
+44%
+The functional capacities of the school both excluding, and including spaces provided by modular buildings (where applicable), divided by the total enrolment at the school as of September 30th, 2023. The graph displays the utilization rate exclusive of modular capacities. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+ENERGY STAR© Change from Baseline
+Baseline: 17
++32
+The ENERGY STAR© Score is a measure of how well your property is performing relative to similar properties; when normalized for climate and operational characteristics. Scores are based on data from national building energy consumption surveys. The 1-100 scale is set so that 1 represents the worst performing buildings and 100 represents the best performing buildings. A score of 50 indicates that a building is performing at the national median taking into account its size, location and operating parameters. The scale is based on the country in which your property is located (properties in Canada are compared to the national population of properties in Canada). Source: Energy Star Portfolio Manager Sept. 2024
+<a class="collapse">Collapse description</a>
+var jsonConfig67289 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67289,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67289',theme : 'classic'});
+});
+var jsonConfig67290 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67290,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67290',theme : 'classic'});
+});
+var jsonConfig67291 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67291,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67291',theme : 'classic'});
+});
+ENERGY STAR Score
+Previous Year Score: 38
+49
+History of Energy Star score since tracking began with baseline data in March 2018. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+Energy Costs
+Annual Energy Costs: $131,736
+Energy Cost Intensity: $35.47/Sq. M.
+Energy cost intensity is a calculated value based on total electrical power cost only for the fiscal year (April 1 to March 31) divided by square metres footprint of the facilities. Source: Energy Star Portfolio.
+Annual Energy Costs include electrical power, heating fuel and natural gas costs (where applicable) combined for the same period.
+Source: Facilities Infrastructure Plan (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Ventilation Assessment
+Mechanical Ventilation System Installed: YES
+Data about ventilation system and additional measures at this school. At schools that do not have a mech. system in place, alternative HEPA units are provided. Source: Ventilation Status Report April 2023
+<a class="collapse">Collapse description</a>
+Heating System Summary
+System Type: Oil
+System ID: B - 1
+Boiler Install Year: 1974
+Number of Boilers: 2
+General details of the school heating system type and most recent install date (if applicable). Data as of June 2023.
+<!-- Cached Content -->
+School Budgets
+<a class="collapse">Collapse description</a>
+Total Budget
+Previous Year: $35,141
+Change from Prev. YR: -$879
+$34,263
+Total 2023-24 school budget allocation, as well as previous school year (excludes staffing, facility and energy op. costs). Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Budget per Student
+Average: $122
+$139
+Total instructional and programming budget for 2023-24 school year, divided by the total student enrolment of the previous year. Budget excludes staffing, facility and energy op. costs. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Instructional Budget
+$24,007
+School budget related to instructional cost categories for the 2023-24 school year (e.g. Technology, textbooks, library, printing, misc. equipment, travel costs... etc.) Excludes staffing costs. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Healthy Minds Budget
+$2,456
+Budget allocation related to running the Healthy Minds program at the school for the 2023-24 school year. This program is a partnership with the school district, staff, parents, students and community partners to support student health and success at school. K-5 only. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+PSSC Budget
+$787
+Budget for the Parent School Support Committee (PSSC) at this school during the 2023-24 school year. Source: Budget and Accounting Office July 2024
+<!-- Cached Content -->
+Transportation Profile
+<a class="collapse">Collapse description</a>
+Proximity to School (KM)
+District Avg.: 7.5KM
+9.8
+The average distance students must travel between their pick-up address and the school, in Kilometres. Source: Transportation October 2024
+<a class="collapse">Collapse description</a>
+Route Count
+12
+Number of routes serving the school's bussed enrolments. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Eligible
+District Avg.: 74.8%
+86.8% (231)
+Proportion and number of students eligible for transportation under the School Board policy. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Not Eligible
+District Avg.: 25.2%
+13.2% (35)
+Proportion and number of students in-boundary that are not eligible for transportation under School Board policy. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Length of Bus Ride
+Longest: 99 minute(s)
+School Average: 40 minute(s)
+District Average: 40 minute(s)
+The longest, and average, school bus ride times for students to this school, in minutes. Source: Transportation Dept. October 2024
+<!-- Cached Content -->
+Community Profile
+<a class="collapse">Collapse description</a>
+var jsonConfig67292 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67292,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67292',theme : 'classic'});
+});
+var jsonConfig67293 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67293,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67293',theme : 'classic'});
+});
+var jsonConfig67294 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67294,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67294',theme : 'classic'});
+});
+Birth Trend - 6 Year
+-14%
+The change in the average number of births per year. Calculated by comparing the most recent 3 years vs. the 3 years before that.
+<a class="collapse">Collapse description</a>
+Population Pressure
+(Related to 2022-23)
+-10.7%
+The difference between the group of children that will be eligible to enter the school over the next 3 years vs. the group aging out of the school (4 years is used in schools with small youth populations).
+<a class="collapse">Collapse description</a>
+Migration
++1.7%
+A measure of the net impact of families moving in and out of this catchment area annually, based on the 5 year average.
+<!-- Cached Content -->
+School Connectedness
+<a class="collapse">Collapse description</a>
+I Feel Safe in my School (Gr. 4-5)
+District Avg.: 93.2%
+Prov. Avg.: 93.2%
+90.0%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<a class="collapse">Collapse description</a>
+I Feel I am Part of my School (Gr. 4-5)
+District Avg.: 89.3%
+Provincial Avg.: 89.2%
+86.4%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<a class="collapse">Collapse description</a>
+I Feel I am Close to People at my School (Gr. 4-5)
+District Avg.: 90.5%
+Provincial Avg.: 90.9%
+93.9%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<!-- Cached Content -->
+Autonomy
+<a class="collapse">Collapse description</a>
+Show what I have Learned (Gr.4-5)
+District Avg.: 81.3%
+Provincial Avg.: 82.3%
+75.1%
+Proportion of students reporting "Sort of true for me" or "Really true for me" to the statement "I have choices in how I show what I have learned". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<!-- Cached Content -->
+Achievement
+<a class="collapse">Collapse description</a>
+Assessment Report
+To see all details related to this school's assessment report results, please click <a href="https://www2.gnb.ca/content/gnb/en/departments/education/k12/content/anglophone_sector/reports_on_achievement/anglophone_west/assessment/andover_elementary_assessment.html">here</a>
+Provincial assessments provide important information about the education system in New Brunswick. For educators, it provides feedback about alignment with provincial curricular standards and the appropriateness of their expectations for students. For the public, it ensures transparency related to how the system is performing.
+<a class="collapse">Collapse description</a>
+var jsonConfig67295 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67295,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67295',theme : 'classic'});
+});
+var jsonConfig67296 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67296,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67296',theme : 'classic'});
+});
+var jsonConfig67297 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67297,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67297',theme : 'classic'});
+});
+English Reading (Gr. 4)
+District Avg.: 54.1%
+Provincial Avg.: 55.6%
+50.0%
+Proportion of grade 4 students at this school at appropriate achievement or above in English Reading (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67298 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67298,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67298',theme : 'classic'});
+});
+var jsonConfig67299 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67299,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67299',theme : 'classic'});
+});
+var jsonConfig67300 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67300,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67300',theme : 'classic'});
+});
+Scientific Literacy (Gr. 4)
+Division Avg: 72.5%
+Provincial Avg. 73.9%
+70.2%
+Proportion of grade 4 students at this school at appropriate achievement or above in scientific literacy (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67301 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67301,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67301',theme : 'classic'});
+});
+var jsonConfig67302 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67302,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67302',theme : 'classic'});
+});
+var jsonConfig67303 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67303,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67303',theme : 'classic'});
+});
+FSL Reading - EFI (Gr. 5)
+District Avg.: 72.1%
+Provincial Avg. 74.9%
+50.0%
+% of grade 5 French as a Second Language students at this school at appropriate achievement or above in Early French Immersion Reading (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67304 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67304,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67304',theme : 'classic'});
+});
+var jsonConfig67305 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67305,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67305',theme : 'classic'});
+});
+var jsonConfig67306 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67306,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67306',theme : 'classic'});
+});
+Mathematics (Gr. 5)
+District Avg.: 48.1%
+Provincial Avg. 53.3%
+36.7%
+% of grade 5 students at this school at appropriate achievement or above in Mathematics (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+window.jQuery || document.write('&lt;script src="/scripts/jquery.js?jsID=25"&gt;&lt;\/script&gt;')
+var isPublic = 1;
+<!-- Cached Content -->
+About This School
+<a class="collapse">Collapse description</a>
+Grade Structure and Family of Schools
+Grade Structure: K-5
+Family of School(s): Perth-Andover Middle School (All Programs)
+Education Centre: Woodstock
+The grade range of the school, family of schools and Education Centre that it belongs to.
+<a class="collapse">Collapse description</a>
+External Links
+<a href="https://asdwbp.nbed.nb.ca/Eligibility" target="blank">School Finder</a>
+<a href="https://asdwbp.nbed.nb.ca/TransportationEligibility" target="blank">Bus Eligibility</a>
+<a href="https://boundaries.districtintelligence.com/event/page.webGisPublic/DistrictCode/NB999" target="blank">School Catchments</a>
+Click on a link above to learn more about Anglophone West School District schools and access available services (pages are hosted outside of District Intelligence).
+<a class="collapse">Collapse description</a>
+Staff Summary
+Total FTE: 36.6
+Education Staff FTE: 21.0
+Support Staff FTE: 16.6
+Total Estimated Salary Cost: $2,462,547
+FTE (Full Time Equivalent) and estimated salary cost of total staff at this school. Displaying breakdown of FTE into education (teachers) and support staff categories (support includes administrative, classroom support, custodian... etc.). Data as of April 2024.
+<!-- Cached Content -->
+Enrolment Profile
+<a class="collapse">Collapse description</a>
+var jsonConfig67307 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67307,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67307',theme : 'classic'});
+});
+var jsonConfig67308 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67308,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67308',theme : 'classic'});
+});
+var jsonConfig67309 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[283,281,252,250,261,264],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":284.0,"min-value":250.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67309,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67309',theme : 'classic'});
+});
+Total Enrolment 2023-24
+264
+Number of pupils attending the school. The graph represents up to 6 years of total enrolment history at the school.
+<a class="collapse">Collapse description</a>
+Utilization
+44%
+Proportion of the school's capacity currently in use based on functional capacity figures. This does not include modular classroom capacity (where applicable). Data updated: January 2024
+<a class="collapse">Collapse description</a>
+Projected Utilization in 5 years
+(Projected Enrolment)
+45% (267)
+Proportion of the school's capacity projected to be in use 5 years from now.
+<a class="collapse">Collapse description</a>
+Surplus Student Spaces
++336
+The extent to which the school's 2023-24 enrolment compares to it's functional capacity of available student spaces (excluding modulars). A negative value indicates a shortfall of permanent student spaces compared to total enrolment. A positive value indicates a surplus of student spaces available compared to the total enrolment. Data verified: Jan. 2024
+<a class="collapse">Collapse description</a>
+Cross Boundary English Prime Program Inflow
+(% of Enrolment)
+22 (10%)
+Number of pupils in English Prime program who attend this school, but live in another school's boundary.
+<a class="collapse">Collapse description</a>
+Cross Boundary English Prime Program Outflow
+(% of Residents)
+10 (4.7%)
+Number of pupils in English Prime program who live in this school's boundary, but choose to attend another school.
+<a class="collapse">Collapse description</a>
+Net Cross Boundary English Prime Program
++12
+A calculated result of the relationship between Inflow vs. Outflow of English Prime enrolments.
+<a class="collapse">Collapse description</a>
+Residents Enrolled in French Immersion Programs
+(District Average)
+14.1% (29.3%)
+The percentage of pupils residing within this school's boundary that are enrolled in a French Immersion program at any school within the jurisdiction.
+<a class="collapse">Collapse description</a>
+Home Language Not English
+(District Average)
+2.3% (9.2%)
+The proportion of the school's enrolment indicating that their primary language spoken at home is not English.
+<!-- Cached Content -->
+Facility Profile
+<a class="collapse">Collapse description</a>
+School Building Details
+Date of Construction: 1956
+Building Area: 4,901.2 Sq. M.
+Note: Date of construction refers to the original structure and does not include additions/upgrades that may have occurred since that time. Data Verified as of Sept. 2024.
+<a class="collapse">Collapse description</a>
+Room Details
+Number of Classrooms: 25
+Number of Modulars: 0
+Number of classrooms (excluding modulars) and number of modulars on-site. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+Per Sq. M. Utility Costs
+Average: $38
+$43
+Total fiscal year operating costs for each school site divided by the size of the building footprint. Includes power, sewage, garbage, heating, maintenance... etc. Value is dollars per square metre. Source: Facilities Data (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Per Pupil Operating Costs
+District Avg.: $599
+$802
+Total 2023-24 fiscal year operating costs divided by the total enrolment of the school as of Sept. 30th 2023. Source: Facilities Data (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Capacity Information
+Incl. Modulars: 44.0%
+44%
+The functional capacities of the school both excluding, and including spaces provided by modular buildings (where applicable), divided by the total enrolment at the school as of September 30th, 2023. The graph displays the utilization rate exclusive of modular capacities. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+ENERGY STAR© Change from Baseline
+Baseline: 17
++32
+The ENERGY STAR© Score is a measure of how well your property is performing relative to similar properties; when normalized for climate and operational characteristics. Scores are based on data from national building energy consumption surveys. The 1-100 scale is set so that 1 represents the worst performing buildings and 100 represents the best performing buildings. A score of 50 indicates that a building is performing at the national median taking into account its size, location and operating parameters. The scale is based on the country in which your property is located (properties in Canada are compared to the national population of properties in Canada). Source: Energy Star Portfolio Manager Sept. 2024
+<a class="collapse">Collapse description</a>
+var jsonConfig67310 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67310,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67310',theme : 'classic'});
+});
+var jsonConfig67311 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67311,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67311',theme : 'classic'});
+});
+var jsonConfig67312 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[17,31,35,37,9,38,49],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2018,2019,2020,2021,2022,2023,2024],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":50.0,"min-value":9.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67312,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67312',theme : 'classic'});
+});
+ENERGY STAR Score
+Previous Year Score: 38
+49
+History of Energy Star score since tracking began with baseline data in March 2018. Data updated: Sept. 2024
+<a class="collapse">Collapse description</a>
+Energy Costs
+Annual Energy Costs: $131,736
+Energy Cost Intensity: $35.47/Sq. M.
+Energy cost intensity is a calculated value based on total electrical power cost only for the fiscal year (April 1 to March 31) divided by square metres footprint of the facilities. Source: Energy Star Portfolio.
+Annual Energy Costs include electrical power, heating fuel and natural gas costs (where applicable) combined for the same period.
+Source: Facilities Infrastructure Plan (calculated) Sept. 2024
+<a class="collapse">Collapse description</a>
+Ventilation Assessment
+Mechanical Ventilation System Installed: YES
+Data about ventilation system and additional measures at this school. At schools that do not have a mech. system in place, alternative HEPA units are provided. Source: Ventilation Status Report April 2023
+<a class="collapse">Collapse description</a>
+Heating System Summary
+System Type: Oil
+System ID: B - 1
+Boiler Install Year: 1974
+Number of Boilers: 2
+General details of the school heating system type and most recent install date (if applicable). Data as of June 2023.
+<!-- Cached Content -->
+School Budgets
+<a class="collapse">Collapse description</a>
+Total Budget
+Previous Year: $35,141
+Change from Prev. YR: -$879
+$34,263
+Total 2023-24 school budget allocation, as well as previous school year (excludes staffing, facility and energy op. costs). Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Budget per Student
+Average: $122
+$139
+Total instructional and programming budget for 2023-24 school year, divided by the total student enrolment of the previous year. Budget excludes staffing, facility and energy op. costs. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Instructional Budget
+$24,007
+School budget related to instructional cost categories for the 2023-24 school year (e.g. Technology, textbooks, library, printing, misc. equipment, travel costs... etc.) Excludes staffing costs. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+Healthy Minds Budget
+$2,456
+Budget allocation related to running the Healthy Minds program at the school for the 2023-24 school year. This program is a partnership with the school district, staff, parents, students and community partners to support student health and success at school. K-5 only. Source: Budget and Accounting Office July 2024
+<a class="collapse">Collapse description</a>
+PSSC Budget
+$787
+Budget for the Parent School Support Committee (PSSC) at this school during the 2023-24 school year. Source: Budget and Accounting Office July 2024
+<!-- Cached Content -->
+Transportation Profile
+<a class="collapse">Collapse description</a>
+Proximity to School (KM)
+District Avg.: 7.5KM
+9.8
+The average distance students must travel between their pick-up address and the school, in Kilometres. Source: Transportation October 2024
+<a class="collapse">Collapse description</a>
+Route Count
+12
+Number of routes serving the school's bussed enrolments. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Eligible
+District Avg.: 74.8%
+86.8% (231)
+Proportion and number of students eligible for transportation under the School Board policy. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Not Eligible
+District Avg.: 25.2%
+13.2% (35)
+Proportion and number of students in-boundary that are not eligible for transportation under School Board policy. Source: Transportation Dept. October 2024
+<a class="collapse">Collapse description</a>
+Transportation - Length of Bus Ride
+Longest: 99 minute(s)
+School Average: 40 minute(s)
+District Average: 40 minute(s)
+The longest, and average, school bus ride times for students to this school, in minutes. Source: Transportation Dept. October 2024
+<!-- Cached Content -->
+Community Profile
+<a class="collapse">Collapse description</a>
+var jsonConfig67313 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67313,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67313',theme : 'classic'});
+});
+var jsonConfig67314 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67314,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67314',theme : 'classic'});
+});
+var jsonConfig67315 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[37,41,50,35,41,35],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":[2017,2018,2019,2020,2021,2022],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":35.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67315,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67315',theme : 'classic'});
+});
+Birth Trend - 6 Year
+-14%
+The change in the average number of births per year. Calculated by comparing the most recent 3 years vs. the 3 years before that.
+<a class="collapse">Collapse description</a>
+Population Pressure
+(Related to 2022-23)
+-10.7%
+The difference between the group of children that will be eligible to enter the school over the next 3 years vs. the group aging out of the school (4 years is used in schools with small youth populations).
+<a class="collapse">Collapse description</a>
+Migration
++1.7%
+A measure of the net impact of families moving in and out of this catchment area annually, based on the 5 year average.
+<!-- Cached Content -->
+School Connectedness
+<a class="collapse">Collapse description</a>
+I Feel Safe in my School (Gr. 4-5)
+District Avg.: 93.2%
+Prov. Avg.: 93.2%
+90.0%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<a class="collapse">Collapse description</a>
+I Feel I am Part of my School (Gr. 4-5)
+District Avg.: 89.3%
+Provincial Avg.: 89.2%
+86.4%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<a class="collapse">Collapse description</a>
+I Feel I am Close to People at my School (Gr. 4-5)
+District Avg.: 90.5%
+Provincial Avg.: 90.9%
+93.9%
+Where students are reporting "A lot like me" or "A little like me". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<!-- Cached Content -->
+Autonomy
+<a class="collapse">Collapse description</a>
+Show what I have Learned (Gr.4-5)
+District Avg.: 81.3%
+Provincial Avg.: 82.3%
+75.1%
+Proportion of students reporting "Sort of true for me" or "Really true for me" to the statement "I have choices in how I show what I have learned". Department of Education and Early Childhood Development - Integrated Student Survey in collaboration with: New Brunswick Health Council 2022-2023. Grades 4-5. Data as of May 2023.
+<!-- Cached Content -->
+Achievement
+<a class="collapse">Collapse description</a>
+Assessment Report
+To see all details related to this school's assessment report results, please click <a href="https://www2.gnb.ca/content/gnb/en/departments/education/k12/content/anglophone_sector/reports_on_achievement/anglophone_west/assessment/andover_elementary_assessment.html">here</a>
+Provincial assessments provide important information about the education system in New Brunswick. For educators, it provides feedback about alignment with provincial curricular standards and the appropriateness of their expectations for students. For the public, it ensures transparency related to how the system is performing.
+<a class="collapse">Collapse description</a>
+var jsonConfig67316 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67316,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67316',theme : 'classic'});
+});
+var jsonConfig67317 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67317,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67317',theme : 'classic'});
+});
+var jsonConfig67318 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[45.8,34.6,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":51.0,"min-value":34.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67318,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67318',theme : 'classic'});
+});
+English Reading (Gr. 4)
+District Avg.: 54.1%
+Provincial Avg.: 55.6%
+50.0%
+Proportion of grade 4 students at this school at appropriate achievement or above in English Reading (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67319 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67319,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67319',theme : 'classic'});
+});
+var jsonConfig67320 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67320,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67320',theme : 'classic'});
+});
+var jsonConfig67321 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[52.1,47.1,70.2],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2021-22","2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":71.0,"min-value":47.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67321,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67321',theme : 'classic'});
+});
+Scientific Literacy (Gr. 4)
+Division Avg: 72.5%
+Provincial Avg. 73.9%
+70.2%
+Proportion of grade 4 students at this school at appropriate achievement or above in scientific literacy (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67322 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67322,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67322',theme : 'classic'});
+});
+var jsonConfig67323 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67323,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67323',theme : 'classic'});
+});
+var jsonConfig67324 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[66.7,50],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":67.0,"min-value":50.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67324,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67324',theme : 'classic'});
+});
+FSL Reading - EFI (Gr. 5)
+District Avg.: 72.1%
+Provincial Avg. 74.9%
+50.0%
+% of grade 5 French as a Second Language students at this school at appropriate achievement or above in Early French Immersion Reading (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+<a class="collapse">Collapse description</a>
+var jsonConfig67325 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67325,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67325',theme : 'classic'});
+});
+var jsonConfig67326 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67326,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67326',theme : 'classic'});
+});
+var jsonConfig67327 = '{"graphset":[{"background-position":"0 0","series":[{"background-color":"#FFFFFF","line-width":3,"background-color-2":"#FFFFFF","marker":{"background-color":"#FFFFFF","background-color-2":"#FFFFFF"},"values":[43.5,36.7],"alpha":0.5,"border-color":"#FFFFFF","type":"line","line-color":"#FFFFFF"}],"scale-x":{"line-color":"#0081C6","item":{"color":"#0081C6"},"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"values":["2022-23","2023-24"],"guide":{"line-color":"null","line-gap-size":0},"line-width":"1","visible":"false"},"plot":{"tooltip-text":"%k : %v%","shadow-distance":"3","marker":{"border-color":"#FFFFFF","color":"#FFFFFF","size":2,"border-width":0,"type":"circle"},"value-box":{"color":"null","text":"","background-color":"white"}},"background-fit":"xy","scale-y":{"line-color":"#0081C6","item":{"color":"#0081C6"},"max-value":44.0,"min-value":36.0,"color":"#0081C6","label":{"color":"#0081C6"},"tick":{"line-color":"#0081C6","size":"0","line-width":"1"},"guide":{"line-color":"null","line-gap-size":0,"visible":false},"line-width":"1","visible":"false"},"alpha":0,"plotarea":{"border-color":"transparent","margin-right":"8","margin-bottom":"23","margin-top":"23","margin-left":"8","border-width":"1","background-color-2":"transparent","background-color":"transparent"},"background-repeat":"no-repeat","background-transparent":1,"tooltip":{"color":"black","background-color":"#FFFFFF","visible":true},"3d-aspect":{"depth":"3"},"type":"line"}],"gui":{"context-menu":{"visible":false}}}';
+jQuery(document).ready(function(){
+ColdFusion.Chart.getChartHandle().render({data : jsonConfig67327,liburl : '/cf_scripts/scripts/chart/cfchart.swf',width : '100%',height : '100%',preservecontainer : true,output : 'auto','safe-render' : true,'safe-render-timeout' : 1000,'safe-render-persist' : false,'hideprogresslogo' : true,'defaults' : '{ "root" : {	"gui" : { "context-menu" : { "visible" : true },"behaviors" : [	{"id" : "BugReport", "enabled" : "none" }, {"id" : "DownloadPDF", "enabled" : "none" }, {"id" : "Print", "enabled" : "none" } ] } } }',container : 'cfchart67327',theme : 'classic'});
+});
+Mathematics (Gr. 5)
+District Avg.: 48.1%
+Provincial Avg. 53.3%
+36.7%
+% of grade 5 students at this school at appropriate achievement or above in Mathematics (includes exempted students). Source: Department of Education and Early Childhood Development Provincial Academic Assessment - 2023-2024 Results
+User Name:
+Password: <a href="/index.cfm?event=page.forgotPassword" style="font-size:0.9em;" target="_blank">Forgot your password?</a>
+$(document).ready(function(){
+var profileCopy = "";
+$('#selSchGUIDProfile').change(function(){
+var isLoggedIn = false;
+$.ajax({
+url: "/index.cfm?event=action.checkloggedin",
+success: function(data){
+if(data==1){
+selectSchoolProfile();
+}
+else{
+isLoggedIn = showLoginDialog('selectSchoolProfile');
+}
+},
+async: true
+});
+})
+function selectSchoolProfile() {
+$('body').spin('modal','');
+var eventPage = getUrlVars()["event"]
+window.location.href = window.location.pathname + '?event=' + eventPage + '&amp;schoolGUID=' + $('#selSchGUIDProfile').val();
+}
+});
+$(document).ready(function() {
+$(".fancybox").fancybox();
+// Make title bar use school name
+document.title = 'Andover Elementary School - Profile';
+});
+var hideTime = 3000;
+function cancelProfileOrder() {
+elementSpinner(1);
+var dataString = 'schoolGUID=' + $('#schoolGUID').val() + '&amp;cntGUID=' + $('#cntGUID').val() + '&amp;cancel=1';
+$('#profileStart .source13').quicksand( $(profileCopy).find('.source13 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source13').css('height','auto');
+} );
+$('#profileStart .source1').quicksand( $(profileCopy).find('.source1 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source1').css('height','auto');
+} );
+$('#profileStart .source6').quicksand( $(profileCopy).find('.source6 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source6').css('height','auto');
+} );
+$('#profileStart .source17').quicksand( $(profileCopy).find('.source17 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source17').css('height','auto');
+} );
+$('#profileStart .source3').quicksand( $(profileCopy).find('.source3 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source3').css('height','auto');
+} );
+$('#profileStart .source2').quicksand( $(profileCopy).find('.source2 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source2').css('height','auto');
+} );
+$('#profileStart .source7').quicksand( $(profileCopy).find('.source7 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source7').css('height','auto');
+} );
+$('#profileStart .source21').quicksand( $(profileCopy).find('.source21 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source21').css('height','auto');
+} );
+$('#profileStart .source11').quicksand( $(profileCopy).find('.source11 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+setCollapse();
+SetOrder();
+$('#profileStart .source11').css('height','auto');
+} );
+$('#dashboard .dropdown-link a').click();
+$("#dashboard .controls .button.red.cancel, .button.blue").addClass('btnHidden');
+if ($('#sortLevel').val() &lt;= 1){
+$("#dashboard .controls .button.red.reset").removeClass('btnHidden');
+}
+elementSpinner(0);
+}
+function resetProfileOrder(){
+$('#wrapper').spin('modal','&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Reset Order');
+var dataString = '/index.cfm?event=action.resetProfileOrder&amp;schoolGUID=' + $('#schoolGUID').val() + '&amp;cntGUID=' + $('#cntGUID').val() + '&amp;orgGUID=766B15FE-E125-43EB-8E78-727E3CCF9A07' + '&amp;peCategory=' + 1;
+$.ajax({
+url: "/index.cfm?event=action.checkloggedin",
+success: function(data){
+if(data==1){
+$.ajax({
+url: "/index.cfm?event=action.resetProfileOrder",
+data: dataString,
+dataType: 'html',
+success : function (data) {
+if(data!=0){
+$('.source13').quicksand( $(data).find('.source13 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source13').css('height','auto');
+} );
+$('.source1').quicksand( $(data).find('.source1 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source1').css('height','auto');
+} );
+$('.source6').quicksand( $(data).find('.source6 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source6').css('height','auto');
+} );
+$('.source17').quicksand( $(data).find('.source17 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source17').css('height','auto');
+} );
+$('.source3').quicksand( $(data).find('.source3 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source3').css('height','auto');
+} );
+$('.source2').quicksand( $(data).find('.source2 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source2').css('height','auto');
+} );
+$('.source7').quicksand( $(data).find('.source7 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source7').css('height','auto');
+} );
+$('.source21').quicksand( $(data).find('.source21 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source21').css('height','auto');
+} );
+$('.source11').quicksand( $(data).find('.source11 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+unBind();
+setCollapse();
+SetOrder();
+$('#profileStart .source11').css('height','auto');
+} );
+$('#sortLevel').val('2');
+$('#reset').parent().addClass('btnHidden');
+$('.icon-monitor').removeClass('active');
+// if ($(data).find('#newSortLevel').val() &lt;= 1){
+// $("#dashboard .controls .button.red.reset").removeClass('btnHidden');
+// }
+// else
+// {
+// $("#dashboard .controls .button.red.reset").addClass('btnHidden');
+// }
+}
+else {
+// $('#dashboard .dropdown-link a').click();
+// $('#dashboard .error').slideDown();
+// var t = setTimeout("$('#dashboard .error').slideUp()", hideTime);
+}
+;
+$('#wrapper').spin('modal',false);
+},
+async: true
+});
+}
+else{
+showLoginDialog('resetProfileOrder');
+}
+},
+async: true
+});
+}
+function saveProfileOrder(){
+$('#wrapper').spin('modal','&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Saving Order');
+var dataString = 'schoolGUID=' + $('#schoolGUID').val() + '&amp;sortOrder=' + $('#SortOrder').val() + '&amp;cntGUID=' + $('#cntGUID').val();
+var loggedin = false;
+$.ajax({
+url: "/index.cfm?event=action.checkloggedin",
+success: function(data){
+if(data==1){
+$.ajax({
+url: "/index.cfm?event=action.saveProfileOrder",
+data: dataString,
+success : function (data) {
+if(data==1){
+$('.formSubmit').removeClass('errormsg').addClass('success').html('Your new order has saved successfully');
+$('.formSubmit.success').show();
+var t = setTimeout("$('.formSubmit.success').fadeOut()", hideTime);
+$('.icon-monitor').removeClass('active');
+$('#sortLevel').val(1);
+profileCopy = '';//$('#copyProfile').html('');
+profileCopy = $('#profileStart').children().clone();
+$('.thirdLevelSubItem.btnHidden').each(function(i,e){$(e).removeClass('btnHidden')});
+//$('#copyProfile').append(tempProfile);
+}
+else {
+$('.formSubmit').removeClass('success').addClass('errormsg').html('An error occurred and your order was unable to be saved');
+$('.formSubmit.errormsg').show();
+var t = setTimeout("$('.formSubmit.errormsg').fadeOut()", hideTime);
+}
+$('#wrapper').spin('modal',false);
+},
+async: true
+});
+}
+else{
+showLoginDialog('saveProfileOrder');
+}
+},
+async: true
+});
+}
+function resetProfileOrderAll(){
+$('#wrapper').spin('modal','&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Reset Order All Schools');
+//elementSpinner(1);
+var dataString = 'schoolGUID=' + $('#schoolGUID').val() + '&amp;cntGUID=' + $('#cntGUID').val() + '&amp;orgGUID=766B15FE-E125-43EB-8E78-727E3CCF9A07' + '&amp;peCategory=1';
+$.ajax({
+url: "/index.cfm?event=action.checkloggedin",
+success: function(data){
+if(data==1){
+$.ajax({
+url: "/index.cfm?event=action.resetProfileOrderForAllSchoolsUserLevel",
+data: dataString,
+success : function (data) {
+if(data!=0){
+$('.source13').quicksand( $(data).find('.source13 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source13').css('height','auto');
+} );
+$('.source1').quicksand( $(data).find('.source1 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source1').css('height','auto');
+} );
+$('.source6').quicksand( $(data).find('.source6 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source6').css('height','auto');
+} );
+$('.source17').quicksand( $(data).find('.source17 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source17').css('height','auto');
+} );
+$('.source3').quicksand( $(data).find('.source3 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source3').css('height','auto');
+} );
+$('.source2').quicksand( $(data).find('.source2 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source2').css('height','auto');
+} );
+$('.source7').quicksand( $(data).find('.source7 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source7').css('height','auto');
+} );
+$('.source21').quicksand( $(data).find('.source21 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+$('#profileStart .source21').css('height','auto');
+} );
+$('.source11').quicksand( $(data).find('.source11 .block'), { adjustHeight: 'dynamic' },function(){
+setStyleDonut();
+setStyleFigurevalue();
+setSort();
+AssignAltRows();
+unBind();
+setCollapse();
+SetOrder();
+$('#profileStart .source11').css('height','auto');
+} );
+$('#sortLevel').val('2');
+$('#reset').parent().addClass('btnHidden');
+$('.icon-monitor').removeClass('active');
+// if ($(data).find('#newSortLevel').val() &lt;= 1){
+// $("#dashboard .controls .button.red.reset").removeClass('btnHidden');
+// }
+// else
+// {
+// $("#dashboard .controls .button.red.reset").addClass('btnHidden');
+// }
+}
+else {
+// $('#dashboard .dropdown-link a').click();
+// $('#dashboard .error').slideDown();
+// var t = setTimeout("$('#dashboard .error').slideUp()", hideTime);
+}
+;
+$('#wrapper').spin('modal',false);
+//elementSpinner(0);
+},
+async: true
+});
+}
+else{
+showLoginDialog('resetProfileOrderAll');
+}
+},
+async: true
+});
+}
+function saveProfileOrderAll(){
+$('#wrapper').spin('modal','Saving Order For All Schools');
+var dataString = 'schoolGUID=' + $('#schoolGUID').val() + '&amp;sortOrder=' + $('#SortOrder').val() + '&amp;cntGUID=' + $('#cntGUID').val();
+$.ajax({
+url: "/index.cfm?event=action.checkloggedin",
+success: function(data){
+if(data==1){
+$.ajax({
+url: "/index.cfm?event=action.saveProfileOrderForAllSchoolsUserView",
+data: dataString,
+success : function (data) {
+if(data==1){
+$('.formSubmit').removeClass('errormsg').addClass('success').html('Your new order has saved successfully');
+$('.formSubmit.success').show();
+var t = setTimeout("$('.formSubmit.success').fadeOut()", hideTime);
+$('#sortLevel').val(1);
+$('.icon-monitor').removeClass('active');
+$('.thirdLevelSubItem.btnHidden').each(function(i,e){$(e).removeClass('btnHidden')});
+}
+else {
+$('.formSubmit').removeClass('success').addClass('errormsg').html('An error occurred and your order was unable to be saved');
+$('.formSubmit.errormsg').show();
+var t = setTimeout("$('.formSubmit.errormsg').fadeOut()", hideTime);
+}
+$('#wrapper').spin('modal',false)
+},
+async: true
+});
+}
+else{
+showLoginDialog('saveProfileOrderAll');
+}
+},
+async: true
+});
+}
+function showLoginDialog(action){
+/* Reset dialog form */
+$('#logindialog ol').show();
+$('#username').val('');
+$('#password').val('');
+$('.message').html('');
+$('#logindialog').dialog({
+modal: true,
+width: 450,
+buttons:{
+Login: function(){
+var dataString = 'username=' + $('#username').val() + '&amp;password=' + $('#password').val();
+$.ajax({
+url: "/index.cfm?event=action.DIProfilelogin",
+data: dataString,
+success : function (data) {
+if(data==1){
+$('#logindialog ol').hide();
+$('.message').html("&lt;br&gt;&lt;br&gt;&lt;h2 style='text-align:center;'&gt;Login Successful&lt;/h2&gt;");
+setTimeout(function(){$( '#logindialog').dialog( "close" ); }, 1000);
+switch(action)
+{
+case 'saveProfileOrder':
+saveProfileOrder();
+break;
+case 'resetProfileOrder':
+resetProfileOrder();
+break;
+case 'saveProfileOrderAll':
+saveProfileOrderAll();
+break;
+case 'resetProfileOrderAll':
+resetProfileOrderAll();
+break;
+case 'selectSchoolProfile':
+selectSchoolProfile();
+break;
+default:
+}
+}
+else {
+$('.message').html('&lt;p style="color:red;"&gt;Login unsuccessful&lt;/p&gt;');
+}
+elementSpinner(0);
+},
+async: true
+});
+},
+Cancel: function(){
+$(this).dialog('close');
+}
+}
+});
+}
+© 2025 Baragar Systems. All Rights Reserved.
+<!--
+Include gumby.js followed by UI modules followed by gumby.init.js
+Or concatenate and minify into a single file -->
+<!--
+Google's recommended deferred loading of JS
+gumby.min.js contains gumby.js, all UI modules and gumby.init.js
+Note: If you opt to use this method of defered loading,
+ensure that any javascript essential to the initial
+display of the page is included separately in a normal
+script tag.
+<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "js/libs/gumby.min.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script> -->

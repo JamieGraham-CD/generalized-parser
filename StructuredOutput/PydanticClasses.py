@@ -1,0 +1,20 @@
+from pydantic import BaseModel, Field
+
+class ParserResponse(BaseModel):
+    school_name: str = Field(description='Name of school')
+    postal_code: str = Field(description='Postal Code of School')
+    address: str = Field(description='Address of School')
+    email: str = Field(description='Email for School or principal')
+    principal: str = Field(description='Principal of School')
+    total_students: str = Field(description='Total Students at School')
+    has_industrial_kitchen: bool = Field(description='Boolean that says if school has an industrial kitchen')
+    has_industrial_kitchen_reasoning: str = Field(description='Explain your reasoning for has_industrial_kitchen using CoT style thinking')
+    has_large_fridges: bool = Field(description='Boolean that says if school has an industrial kitchen')
+    has_large_fridges_reasoning: str = Field(description='Explain your reasoning for has_large_fridges using CoT style thinking')
+    building_area: str = Field(description='Total area of building.')
+    annual_energy_cost: str = Field(description='Annual energy cost of building.')
+    total_yearly_budget: str = Field(description='Total budget of school.')
+    per_pupil_operating_cost: str = Field(description='The operating cost of the school per pupil') 
+    grade_structure: str = Field(description='Grade structure of the school.')
+    surplus_student_spaces: str = Field(description='Extra student spaces that could be occupied but currently are not in the school.')
+    number_of_classrooms: str = Field(description='Total number of classrooms in the school.')
